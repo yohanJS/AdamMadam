@@ -15,7 +15,7 @@ const checkForPalindrome =()=> {
     //get the user input
     let userString = $("userString").value;
 
-    if(userString.match(onlyNumbers)) {
+    if(userString.match(onlyNumbers) || userString == "") {
         $("msg").classList.add("alert-danger");
         $("msg").innerHTML = "Please use a combinations of letters, numbers and symbols.";
     } else {
