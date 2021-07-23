@@ -1,10 +1,9 @@
 "use strict"
 
-//gets the id from the element
+//gets the element ID
 const $ =(id)=> {
     return document.getElementById(id);
 }
-
 
 //check for palindrome
 const checkForPalindrome =()=> {
@@ -22,7 +21,7 @@ const checkForPalindrome =()=> {
         //converts the string to lower case
         userString = userString.toLowerCase();
 
-        //remove spaces, symbols, numbers
+        //regex to remove spaces, symbols
         userString = userString.replace(/[^a-zA-Z]/g, '');
 
         //the array will hold the string reversed
@@ -50,7 +49,6 @@ const checkForPalindrome =()=> {
         }
     }
 }
-
 
 window.onload = function() {
     $("check").onclick = function() {

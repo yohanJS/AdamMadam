@@ -61,15 +61,101 @@
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col col-lg-8">
                     <pre><code class="language-javascript">
-let helloWorld = () => {
-    alert("Hello World");
+"use strict"
+
+//gets the element ID
+const $ =(id)=> {
+    return document.getElementById(id);
+}
+
+//check for palindrome
+const checkForPalindrome =()=> {
+
+    //regex to check if the user enters only numbers
+    var onlyNumbers = /^[0-9]+$/;
+
+    //get the user input
+    let userString = $("userString").value;
+
+    if(userString.match(onlyNumbers) || userString == "") {
+        $("msg").classList.add("alert-danger");
+        $("msg").innerHTML = "Please use a combinations of letters, numbers and symbols.";
+    } else {
+        //converts the string to lower case
+        userString = userString.toLowerCase();
+
+        //regex to remove spaces, symbols
+        userString = userString.replace(/[^a-zA-Z]/g, '');
+
+        //the array will hold the string reversed
+        let revString = [];
+
+        //reverse the string 
+        for(let i = userString.length - 1; i >= 0; i-- ) {
+            revString += userString[i];
+        }
+
+        if(revString == userString) {
+            $("msg").innerHTML = `${userString} is a <strong>Palindrome</strong>.`;
+            $("msg").classList.add("alert-success");
+            if($("msg").classList.contains("alert-danger")) {
+                $("msg").classList.remove("alert-danger");
+                $("msg").classList.add("alert-success");
+            }
+        } else {
+            $("msg").innerHTML = `${userString} is not a <strong>Palindrome</strong>.`;
+            $("msg").classList.add("alert-danger");
+            if($("msg").classList.contains("alert-success")) {
+                $("msg").classList.remove("alert-success");
+                $("msg").classList.add("alert-danger");
+            }
+        }
+    }
+}
+
+window.onload = function() {
+    $("check").onclick = function() {
+        $("msg").innerHTML = "";
+
+        checkForPalindrome();
+        $("userString").value = "";
+
+    }
 }                        
-                    </code></pre>
+</code></pre>
                 </div>
                 <div class="col col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <h5 class="txt-color">The Code is structured in one big function.</h5>
+                    <p>
+                        The first function simply uses a return statement to grab the ID of a 
+                        specific element, and return its value.
+                    </p>
+                    <p>
+                        Then, using the arrow function expression, we declared a function called <strong>checkForPalindrome</strong>. 
+                        We first have a regular expression inside this function that simply checks if the user enters 
+                        numbers only. We will use this regular expression in a second. Follow this, get the user's input, 
+                        and use an if/else statement and the regular expression above; we make sure the user only enters 
+                        a combination of characters and if the input field is not empty.
+                    </p>
+                    <p>
+                        If not of these applies, we continue in our way to reverse the value entered. 
+                        First, we make the string lower case; then, we remove all symbols, spaces, or 
+                        numbers mixed with the string value.
+                    </p>
+                    <p>
+                        Once we have the string cleaned, we used an array to store the string reversed. To do this 
+                        we used a for loop to iterate over the string, and instead of starting at the beginning of 
+                        the string we start at the last position index of the string.
+                    </p>
+                    <p>
+                        Using an if/else statement, we check if the string entered is the same as the string reversed, 
+                        and we display a message to the user.</p>
+                    <p>
+                        At the bottom of the script, we use the window object and the onload function to load 
+                        the script after the DOM has completely loaded. We then insert an event listener that 
+                        checks if the check button is clicked. Implementing a callback function we called the 
+                        <strong>checkForPalindrome()</strong> function.
+                    </p>
                 </div>
             </div>
         </div>
