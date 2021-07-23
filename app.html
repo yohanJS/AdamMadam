@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Yohan Garcia</title>
+    <title>Paldrome App: A Coding Project by Yohan Garcia</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,13 +33,13 @@
                         <a class="nav-link" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./app.html">The App</a>
+                        <a class="nav-link active" aria-current="page" href="./app.html">Paldrome App</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/miniSitesJS">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/AdamMadam">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://www.yohancraft.com/">About</a>
@@ -51,7 +51,48 @@
 
     <!--Main Section-->
     <main class="flex-shrink-0">
-
+        <div class="container mt-4 mb-4">
+            <div class="row">
+                <div class="col-12 col-md-7">
+                    <h2 class="txt-color border-bottom">Paldrome App</h2>
+                    <p>
+                        A palindrome is a word, phrase, or other sequence of 
+                        characters that reads the same backward as forward, such as 
+                        madam or racecar. We have added a few examples for you to try. 
+                        We are not checking for numbers on this case.
+                    </p>
+                    <h2 class="txt-color border-bottom">Single Word Palindromes</h2>
+                    <ul>
+                        <li>Anna</li>
+                        <li>Civic</li>
+                        <li>Kayak</li>
+                        <li>Level</li>
+                        <li>Redder</li>
+                    </ul>
+                    <h2 class="txt-color border-bottom">Multiple Word Palindromes</h2>
+                    <ul>
+                        <li>Don't nod.</li>
+                        <li>Red rum, sir, is murder</li>
+                        <li>Top spot</li>
+                        <li>Was it a cat I saw?</li>
+                        <li>No lemon, no melon</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-5">
+                    <h3 class="txt-color">Enter</h3>
+                    <form class="row gy-2 gx-3">
+                        <div class="col-12">
+                            <input id="userString" type="text" placeholder="taco cat!09" aria-label="user string" class="form-control">
+                        </div>
+                        <div class="col">
+                            <button class="btn-primary rounded" type="button" id="check">Check</button>
+                        </div>
+                    </form>
+                    <h4 class="mt-4 border-bottom">Result</h4>
+                    <p class="alert" id="msg"></p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!--Footer Section-->
